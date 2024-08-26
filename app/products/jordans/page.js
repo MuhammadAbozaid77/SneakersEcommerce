@@ -1,3 +1,6 @@
+import Header from "@/app/_components/Header";
+import Link from "next/link";
+
 export default function Jordans() {
-  return <div>http://localhost:3000/products/jordans</div>;
+  return <div>JordansJordans</div>;
 }
