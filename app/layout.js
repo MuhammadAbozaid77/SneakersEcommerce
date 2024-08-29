@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "@/app/_styles/globals.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Header from "@/app/_components/layouts/Header";
 import Container from "@/app/_components/ui/Container";
 import Footer from "@/app/_components/layouts/Footer";
@@ -21,13 +22,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} flex flex-col justify-between items-center`}
       >
-        <header className="w-[100%] flex-1">
-          <Header />
-        </header>
+        <Header />
         <main className="w-full md:min-h-[calc(100vh-100px)] min-h-screen border flex-1">
           <Container>{children}</Container>
         </main>
-        <footer className="w-full flex-1">
+        <footer className="bg-black text-white pt-14 pb-3 w-full">
           <Footer />
         </footer>
       </body>

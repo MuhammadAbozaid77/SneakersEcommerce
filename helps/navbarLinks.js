@@ -1,15 +1,13 @@
-export const links = [
-  { path: "", name: "home" },
-  { path: "pages/about", name: "about" },
-  {
-    path: "pages/categories",
-    name: "categories",
-    sublink: [
-      { path: "pages/categories/sneakers", name: "sneakers" },
-      { path: "pages/categories/jordans", name: "jordans" },
-      { path: "pages/categories/runningshoes", name: "runningshoes" },
-      { path: "pages/categories/footballshoes", name: "footballshoes" },
-    ],
-  },
-  { path: "pages/contact", name: "contact" },
+export const data = [
+  { id: 1, name: "Home", url: "/" },
+  { id: 2, name: "About", url: "/about" },
+  { id: 3, name: "Categories", subMenu: true },
+  { id: 4, name: "Contact", url: "/contact" },
+];
+
+export const subMenuData = [
+  { id: 1, name: "Jordan", doc_count: 11 },
+  { id: 2, name: "Sneakers", doc_count: 8 },
+  { id: 3, name: "Running shoes", doc_count: 64 },
+  { id: 4, name: "Football shoes", doc_count: 107 },
 ];
