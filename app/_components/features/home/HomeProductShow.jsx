@@ -2,6 +2,7 @@
 import "react-multi-carousel/lib/styles.css";
 import ProductCard from "../product/ProductCard";
 import Wrapper from "../../ui/Wrapper";
+import GridLayout from "../../ui/GridLayout";
 
 export default function HomeProductShow() {
   return (
@@ -19,13 +20,12 @@ export default function HomeProductShow() {
         </div>
         {/* Heading And Pargraph End */}
 
-        <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-5 my-14 px-5">
+        <GridLayout>
           <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
-          <ProductCard />
-        </div>
+        </GridLayout>
       </Wrapper>
     </>
   );
