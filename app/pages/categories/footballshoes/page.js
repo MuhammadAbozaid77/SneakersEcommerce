@@ -1,15 +1,13 @@
-import ProductCard from "@/app/_components/features/product/ProductCard";
-import GridLayout from "@/app/_components/ui/GridLayout";
+import FootballShoesList from "@/app/_components/features/categories/FootballShoesList";
+import SpinnerLoading from "@/app/_components/ui/SpinnerLoading";
 import Wrapper from "@/app/_components/ui/Wrapper";
-import { getFootballShoesDataWithImages } from "@/app/_data/_api/footballshoes";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "FootballShoes",
 };
 
 export default async function FootballShoes() {
-  const data = await getFootballShoesDataWithImages();
-
   return (
     <>
       <Wrapper>
@@ -25,11 +23,11 @@ export default async function FootballShoes() {
         </div>
         {/* Heading And Pargraph End */}
 
-        <GridLayout item={data}>
-          {data?.map((item, index) => (
-            <ProductCard key={index} item={item} />
-          ))}
-        </GridLayout>
+        {/* Jordan List Start */}
+        <Suspense fallback={<SpinnerLoading />}>
+          <FootballShoesList />
+        </Suspense>
+        {/* Jordan List End */}
       </Wrapper>
     </>
   );

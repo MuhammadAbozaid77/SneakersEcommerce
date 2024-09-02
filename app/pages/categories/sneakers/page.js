@@ -1,15 +1,13 @@
-import ProductCard from "@/app/_components/features/product/ProductCard";
-import GridLayout from "@/app/_components/ui/GridLayout";
+import SneakersList from "@/app/_components/features/categories/SneakersList";
+import SpinnerLoading from "@/app/_components/ui/SpinnerLoading";
 import Wrapper from "@/app/_components/ui/Wrapper";
-import { getSneakersDataWithImages } from "@/app/_data/_api/sneakers";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Sneakers",
 };
 
 export default async function Sneakers() {
-  const data = await getSneakersDataWithImages();
-
   return (
     <>
       <Wrapper>
@@ -25,11 +23,11 @@ export default async function Sneakers() {
         </div>
         {/* Heading And Pargraph End */}
 
-        <GridLayout item={data}>
-          {data?.map((item, index) => (
-            <ProductCard key={index} item={item} />
-          ))}
-        </GridLayout>
+        {/* Jordan List Start */}
+        <Suspense fallback={<SpinnerLoading />}>
+          <SneakersList />
+        </Suspense>
+        {/* Jordan List End */}
       </Wrapper>
     </>
   );

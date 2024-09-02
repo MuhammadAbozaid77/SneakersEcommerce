@@ -1,4 +1,4 @@
-import ProductCard from "@/app/_components/features/product/ProductCard";
+import ProductCard from "@/app/_components/features/cards/ProductCard";
 import GridLayout from "@/app/_components/ui/GridLayout";
 import Wrapper from "@/app/_components/ui/Wrapper";
 

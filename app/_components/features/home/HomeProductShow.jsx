@@ -1,6 +1,6 @@
 "use client";
 import "react-multi-carousel/lib/styles.css";
-import ProductCard from "../product/ProductCard";
+import ProductCard from "../cards/ProductCard";
 import Wrapper from "../../ui/Wrapper";
 import GridLayout from "../../ui/GridLayout";
 
