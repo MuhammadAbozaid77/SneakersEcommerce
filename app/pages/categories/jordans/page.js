@@ -1,15 +1,12 @@
-import ProductCard from "@/app/_components/features/product/ProductCard";
-import GridLayout from "@/app/_components/ui/GridLayout";
+import JordanList from "@/app/_components/features/categories/JordanList";
+import SpinnerLoading from "@/app/_components/ui/SpinnerLoading";
 import Wrapper from "@/app/_components/ui/Wrapper";
-import { getJordanDataWithImages } from "@/app/_data/_api/jordan";
-
+import { Suspense } from "react";
 export const metadata = {
   title: "Jordans",
 };
 
 export default async function Jordans() {
-  const data = await getJordanDataWithImages();
-
   return (
     <>
       <Wrapper>
@@ -24,12 +21,11 @@ export default async function Jordans() {
           </div>
         </div>
         {/* Heading And Pargraph End */}
-
-        <GridLayout item={data}>
-          {data?.map((item, index) => (
-            <ProductCard key={index} item={item} />
-          ))}
-        </GridLayout>
+        {/* Jordan List Start */}
+        <Suspense fallback={<SpinnerLoading />}>
+          <JordanList />
+        </Suspense>
+        {/* Jordan List End */}
       </Wrapper>
     </>
   );
